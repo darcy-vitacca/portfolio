@@ -15,6 +15,21 @@ class Project extends Component {
           </p>
           <p>React, Express</p>
         </div>
+        <div>
+        <a href="https://www.linkedin.com/in/darcy-vitacca/">
+                <img
+                  className="iconFork"
+                  src={require("../images/githubsymbol.png")}
+                ></img>
+              </a>
+              <a href="https://github.com/darcy-vitacca">
+                <img
+                  className="icon"
+                  src={require("../images/newtab.png")}
+                ></img>
+              </a>
+
+        </div>
       </div>
     );
   }

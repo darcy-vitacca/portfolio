@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
 header {
   background-color: white;
@@ -13,25 +12,29 @@ p,
 h1,
 h2,
 h3 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-.container{
+.container {
   padding: 0 2em;
-  
+  margin-top: -11em;
 }
-
+header{
+  background-color: #9f9ffa;
+}
 .nav-header {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
   height: 40px;
+  max-width: 1460px;
 }
 .logo {
   display: flex;
   align-items: center;
   color: white;
   height: 40px;
+  margin-left: 0.3em;
 }
 .nav-menu {
   display: flex;
@@ -39,9 +42,15 @@ h3 {
 }
 .nav-links {
   margin: 0.2em;
+  color: white;
+  text-decoration: none;
+}
+.navLinks{
+  display: none;
 }
 #menu {
-  width: 30px;
+  width: 28px;
+  margin-right: 0.6em;
 }
 
 .banner {
@@ -55,23 +64,33 @@ h3 {
   justify-content: center;
 }
 .banner h1 {
-  width: 60%;
-  margin: 0 auto;
+  width: 80%;
+  margin: 0.2em auto;
   text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+.bannerHeaderText{
+  color: black;
+  margin: 1em auto;
+ 
 }
 .banner p {
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
+  font-size: 14px;
+  text-align: center;
 }
 
 .bannerContainer {
   margin: 0;
   display: flex;
-  height: 700px;
+  height: 800px;
   flex-direction: column;
 }
-.bannertext {
-  width: 60%;
+.bannerText {
+  width: 80%;
+  margin-top: -4em;
 }
 .bannerText button {
   display: block;
@@ -89,17 +108,26 @@ h3 {
   font-weight: 500;
   cursor: pointer;
 }
+.contactSocialsDiv{
+  min-width: 140px;
+  margin: 0 auto;
+  text-align: center;
+
+}
+.icon{
+  width: 30px;
+  margin: 0.3em;
+}
+.iconFork{
+  width: 20px;
+  margin: 0.3em;
+}
 
 .projectsContainer {
   width: 100%;
-  /* display: flex;
-  flex-wrap: wrap; */
   margin: 3em 0;
   margin-top: 0;
 }
-/* .projectsContainer h1 {
-  margin: 0 auto;
-} */
 .projectsHeader {
   text-align: left;
   margin: 0;
@@ -112,14 +140,14 @@ h3 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   min-width: 220px;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .projectComponent:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 .projectsSection {
-  margin: 0 ;
+  margin: 0;
   display: flex;
   flex-direction: column;
   width: 90%;
@@ -172,8 +200,75 @@ h3 {
   transform: rotate(180deg);
   margin-top: 4em;
 }
-
-
+.contactInput {
+  background-color: #f7f7f7;
+  margin: 1em auto;
+}
+.contactInput input {
+  font-size: 14px;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+.contactFormCont {
+  background-color: #f7f7f7;
+  border-bottom-right-radius: 60px;
+  border-top-left-radius: 60px;
+  border: 2px solid #bababa;
+  min-width: 210px;
+  padding: 1.6em 2.6em;
+  max-width: 450px;
+  margin: 4em auto;
+  box-shadow: 0 10px 18px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+.contactFormCont h1,
+h2,
+h3 {
+  margin: 0.3em 0;
+  color: #9f9ffa;
+  font-weight: 900;
+}
+.contactFormCont h1 {
+  color: black;
+}
+.enquiry {
+  width: 100%;
+  min-height: 180px;
+  resize: vertical;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+.submitButton {
+  color: white;
+  background-color: #9f9ffa;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 18px;
+  border: none;
+  padding: 0.4em;
+  margin: 0.6em auto;
+}
+.bottomImageDiv {
+  position: absolute;
+}
+.bottomImage {
+  width: 500px;
+  height: 300px;
+  position: relative;
+  z-index: -11;
+  top: -250px;
+  left: -80px;
+}
+.bottomImageDiv2 {
+  position: absolute;
+  height: 50px;
+}
+.bottomImage2 {
+  width: 250px;
+  position: relative;
+  z-index: -12;
+  top: -250px;
+}
 
 @media only screen and (min-width: 480px) {
   .projectsSection {
@@ -182,40 +277,98 @@ h3 {
     justify-content: space-between;
     width: 100%;
   }
- 
+  .bottomImage {
+    width: 800px;
+    height: 500px;
+  }
+}
+@media only screen and (min-width: 620px) {
+  .bottomImage {
+    left: 40px;
+  }
+  .banner p {
+    width: 60%;
+  }
 }
 
 @media only screen and (min-width: 905px) {
   .projectComponent {
     max-width: 380px;
   }
+  .bottomImage {
+    left: 260px;
+  }
+  .bottomImage2 {
+    left: 50px;
+  }
+  #menu{
+    display: none;
+
+  }
+  .navLinks{
+    display: inherit;
+    margin-right: 0.5em;
+  }
 }
 @media only screen and (min-width: 1005px) {
   .projectComponent {
     max-width: 430px;
   }
+  .bottomImage {
+    left: 280px;
+  }
+
 }
 @media only screen and (min-width: 1100px) {
   .projectComponent {
     max-width: 460px;
+  }
+  .bottomImage {
+    left: 360px;
+  }
+  .bottomImage2 {
+    left: 120px;
   }
 }
 @media only screen and (min-width: 1240px) {
   .projectComponent {
     max-width: 530px;
   }
+  .bottomImage {
+    left: 520px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .bottomImage2 {
+    left: 180px;
+  }
 }
 @media only screen and (min-width: 1400px) {
   .projectComponent {
     max-width: 380px;
   }
-  .projectsHeader{
+  .projectsHeader {
     margin: 0;
   }
   .container {
     max-width: 1400px;
     margin: 0 auto;
+    margin-top: -14em;
+  }
+  .bottomImage {
+    top: -520px;
+    left: 600px;
+
+    width: 900px;
+    height: 650px;
+  }
+  .bottomImage2 {
+    left: 280px;
+  }
+ 
+}
+@media only screen and (min-width: 1500px) {
+  .bottomImage2 {
+    left: 370px;
   }
 }
-
-
