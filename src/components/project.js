@@ -1,38 +1,37 @@
 import React, { Component } from "react";
 
-class Project extends Component {
-  render() {
+const Project = (props) => {
+  return props.projects.map((val, idx) => {
+    // console.log(val.projectImg)
     return (
       <div className="projectComponent">
         <div className="projectComponentBkg">
-          <h1>Project</h1>
-          <img className="projectImg" src={require('../images/tradeconnect.png')}></img>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed
-            accumsan est. Suspendisse accumsan eleifend metus et dapibus.
-            Praesent erat orci, egestas non justo sed, volutpat egestas dolor.
-          </p>
-          <p>React, Express</p>
-        </div>
-        <div>
-        <a href="https://www.linkedin.com/in/darcy-vitacca/">
+          <div className="projectsHeaderTop">
+            <h1>{val.projectName}</h1>
+            <div>
+              <a href={val.projectGithub}>
                 <img
                   className="iconFork"
                   src={require("../images/githubsymbol.png")}
                 ></img>
               </a>
-              <a href="https://github.com/darcy-vitacca">
+              <a href={val.projectSite}>
                 <img
                   className="icon"
                   src={require("../images/newtab.png")}
                 ></img>
               </a>
-
+            </div>
+          </div>
         </div>
+
+        <img className="projectImg" src={val.projectImg}></img>
+
+        <p className="projectDesc">{val.projectDesc}</p>
+        <p className="projectLang"> {val.projectLanguages}</p>
       </div>
     );
-  }
-}
+  });
+};
 
 export default Project;

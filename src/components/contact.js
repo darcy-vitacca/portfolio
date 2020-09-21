@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import { connect } from "react-redux";
 import { uuid } from "uuidv4";
+import emailjs from "emailjs-com";
 
 class Contact extends Component {
   constructor() {
@@ -11,7 +12,8 @@ class Contact extends Component {
     this.state = {
       name: "",
       email: "",
-      enquiry: ""
+      enquiry: "",
+      status: "",
     };
   }
   handleChange = (e) => {
@@ -22,17 +24,30 @@ class Contact extends Component {
     e.preventDefault();
     const formData = {
       name: this.state.name,
-      lastName: this.state.lastName,
       email: this.state.email,
       enquiry: this.state.enquiry,
     };
-    this.props.contactForm(this.state);
+    emailjs
+      .send(
+        "service_cs3idh7",
+        "template_6bh5dsx",
+        formData,
+        "user_S5vadtukCeXQX6HOjV8Z8"
+      )
+      .then(
+        (res) => {
+          this.setState({status: "Sent"})
+        },
+        (err) => {
+            this.setState({status: "Failed"})
+        }
+      );
   };
   render() {
-    let { name, email, enquiry } = this.state;
+    let { name, email, enquiry ,status} = this.state;
     return (
       <div className="contactFormCont">
-            <h1>Contact</h1>
+        <h1>Contact</h1>
         <form
           className="contactForm"
           onChange={this.handleChange}
@@ -70,7 +85,7 @@ class Contact extends Component {
             value={enquiry}
             placeholder="Enquiry:"
           ></textarea>
-
+        {<p className="contactMessage">{status}</p>}
           <button type="submit" className="submitButton">
             Submit Enquiry
           </button>
